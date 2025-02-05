@@ -6,12 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+
     <div style="border: 1px solid black; width: 500px;">
         <div id="volume" style="height: 10px; background: black; transition: width .1s; width: 0%"></div>
       </div>
       <button onClick="start()" type="button">スタート
-        
+
       </button>
+      <input type="number" id = Ad>
     <script>
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -29,6 +31,12 @@ function onProcess(event) {
     return max > cur ? max : cur;
   });
   render(100 * peak);
+  if(100 * peak >=document.getElementById("Ad").number)
+  {
+    document.body.style.backgroundColor = 'yellow';
+  }
+  else
+  document.body.style.backgroundColor = 'white';
 }
 
 async function start() {
