@@ -31,7 +31,7 @@ function onProcess(event) {
     return max > cur ? max : cur;
   });
   render(100 * peak);
-  if(100 * peak >=document.getElementById("Ad").number)
+  if(100 * peak >=document.getElementById("Ad").value)
   {
     document.body.style.backgroundColor = 'yellow';
   }
